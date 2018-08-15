@@ -33,7 +33,7 @@ with open('hodata.pickle','rb') as ho:
     n.who = pickle.load(ho)
 
 #判定データロードしデジタル化
-input_data_array = scipy.misc.imread("E:/手書き文字_mnist/mnist/input/input_data_8.png",flatten = True)
+input_data_array = scipy.misc.imread("inputデータのアドレス",flatten = True)
 #input_data_array = imageio.imread("G:/手書き文字_mnist/mnist/input/input_data_3.png")
 input_data = 255.0 - input_data_array.reshape(784)
 input_data_cl = (np.asfarray(input_data) / 255.0 * 0.99) + 0.01
@@ -48,13 +48,13 @@ outputs = n.query(inputs)
 label = np.argmax(outputs)
 #nnの解答を表示
 print("答え= ",label)
-img = Image.open("E:/手書き文字_mnist/mnist/input/input_data_8.png")
+img = Image.open("inputデータのアドレス")
 img_list = np.asarray(img)
 plt.imshow(img_list)
 plt.show()
 ans_end = input("True/False? ")
 #結果を書き込む
-ans_nn_tr = open("E:/手書き文字_mnist/mnist/output/ans_nn_tr.txt","a")
+ans_nn_tr = open("logのアドレス","a")
 ans_nn_tr_list = [" 正誤= ",str(ans_end)]
 ans_nn_tr.writelines(ans_nn_tr_list)
 ans_nn_tr.close()
