@@ -34,7 +34,6 @@ with open('hodata.pickle','rb') as ho:
 
 #判定データロードしデジタル化
 input_data_array = scipy.misc.imread("inputデータのアドレス",flatten = True)
-#input_data_array = imageio.imread("G:/手書き文字_mnist/mnist/input/input_data_3.png")
 input_data = 255.0 - input_data_array.reshape(784)
 input_data_cl = (np.asfarray(input_data) / 255.0 * 0.99) + 0.01
 
